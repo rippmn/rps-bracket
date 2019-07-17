@@ -54,7 +54,7 @@ public class BracketNodeTest extends TestCase {
 
         bn = new BracketNode(257);
         assertEquals(8, bn.getLevel());
-        assertEquals(Math.pow(2,7), bn.getInsertValue());
+        assertEquals((int)Math.pow(2,7), bn.getInsertValue());
     }
 
 
