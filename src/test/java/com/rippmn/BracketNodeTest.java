@@ -29,6 +29,33 @@ public class BracketNodeTest extends TestCase {
         assertEquals(1, bn.getInsertValue());
     }
 
+    public void testLevel2(){
+        BracketNode bn = new BracketNode(4);
+        assertEquals(2, bn.getLevel());
+        assertEquals(0, bn.getInsertValue());
+
+        bn = new BracketNode(5);
+        assertEquals(2, bn.getLevel());
+        assertEquals(2, bn.getInsertValue());
+
+        bn = new BracketNode(6);
+        assertEquals(2, bn.getLevel());
+        assertEquals(1, bn.getInsertValue());
+
+        bn = new BracketNode(7);
+        assertEquals(2, bn.getLevel());
+        assertEquals(3, bn.getInsertValue());
+    }
+
+    public void testLeval8(){
+        BracketNode bn = new BracketNode(256);
+        assertEquals(8, bn.getLevel());
+        assertEquals(0, bn.getInsertValue());
+
+        bn = new BracketNode(257);
+        assertEquals(8, bn.getLevel());
+        assertEquals(Math.pow(2,7), bn.getInsertValue());
+    }
 
 
 }

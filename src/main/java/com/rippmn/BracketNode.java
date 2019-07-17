@@ -16,8 +16,7 @@ public class BracketNode {
         } else {
             BracketNode parent = new BracketNode(position / 2);
             this.level = parent.getLevel() + 1;
-            //not sure this is the right calc but what it should be is the parents insertOrder (needs renaming as it only matters at the leafs) + the current nodes value (level as a power of 2??)
-            this.insertValue = parent.getInsertValue() + ((2 ^ (this.level - 1)) * (position % 2));
+            this.insertValue = parent.getInsertValue() + ((int)Math.pow(2, this.level-1) * (position % 2));
         }
 
     }

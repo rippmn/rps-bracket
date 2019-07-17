@@ -8,6 +8,9 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        for (int i = 8; i < 16; i++) {
+            BracketNode bn = new BracketNode(i);
+            System.out.println(bn.getInsertValue());
+        }
     }
 }
