@@ -11,8 +11,8 @@ public class BracketNode {
         assert position > 0;
 
         if (position == 1) {
-            level = 0;
-            insertValue = 0;
+            this.level = 0;
+            this.insertValue = 0;
         } else {
             BracketNode parent = new BracketNode(position / 2);
             this.level = parent.getLevel() + 1;
