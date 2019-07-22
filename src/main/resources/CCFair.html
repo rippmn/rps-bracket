@@ -1,0 +1,41 @@
+<html>
+<head>
+    <script>
+            function RPSNode(entryNum){
+                if(entryNum < 1){
+                    throw console.error("cannot do anything unless value is >0");
+                }
+
+
+                if (entryNum == 1) {
+                     this.level = 0;
+                     this.insertValue = 1;
+                } else {
+                    var parent = new RPSNode(Math.floor(entryNum / 2));
+                     this.level = parent.level + 1;
+                     this.insertValue = parent.insertValue + (Math.pow(2, this.level-1) * (entryNum % 2));
+                }
+                this.entryNum = entryNum;
+
+
+            }
+
+            function getValue(){
+
+                entry= parseInt(document.getElementById("input").value) + 255 ;
+                document.getElementById("input").value = "";
+
+                rps = new RPSNode(entry);
+                document.getElementById("out").innerHTML = entry + " : " + rps.insertValue;
+            }
+        </script>
+</head>
+<body>
+<div id="entry">Entry: <input id="input"/>
+    <br/>
+    <Button onclick="getValue()">Get Bracket Position</Button>
+</div>
+<div id="out"></div>
+
+</body>
+</html>
